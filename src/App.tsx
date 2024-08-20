@@ -17,9 +17,18 @@ const globalStyles = (
   <GlobalStyles styles={{ "html, body, #root": { height: "100%" } }} />
 );
 
-const theme = createTheme({
-  palette: { primary: { main: "#f38020" } },
-});
+const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+const theme = React.useMemo(
+  () =>
+    createTheme({
+      palette: {
+        mode: prefersDarkMode ? 'dark' : 'light',
+        primary: { main: "#1565C0" }
+      },
+    }),
+  [prefersDarkMode],
+);
 
 function App() {
   const [search, setSearch] = useState("");
