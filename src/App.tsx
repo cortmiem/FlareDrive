@@ -6,7 +6,8 @@ import {
   Snackbar,
   Stack,
 } from "@mui/material";
-import React, { useState } from "react";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import React, { useState, useMemo } from "react";
 
 import Header from "./Header";
 import Main from "./Main";
@@ -17,20 +18,20 @@ const globalStyles = (
   <GlobalStyles styles={{ "html, body, #root": { height: "100%" } }} />
 );
 
-const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-const theme = React.useMemo(
-  () =>
-    createTheme({
-      palette: {
-        mode: prefersDarkMode ? 'dark' : 'light',
-        primary: { main: "#1565C0" }
-      },
-    }),
-  [prefersDarkMode],
-);
-
 function App() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: prefersDarkMode ? 'dark' : 'light',
+          primary: { main: "#1565C0" }
+        },
+      }),
+    [prefersDarkMode],
+  );
+
   const [search, setSearch] = useState("");
   const [showProgressDialog, setShowProgressDialog] = React.useState(false);
   const [error, setError] = useState<Error | null>(null);
