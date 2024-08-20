@@ -18,7 +18,7 @@ function Header({
       <InputBase
         size="small"
         fullWidth
-        placeholder="Search…"
+        placeholder="検索…"
         value={search}
         onChange={(e) => onSearchChange(e.target.value)}
         sx={{
@@ -40,15 +40,13 @@ function Header({
         open={Boolean(anchorEl)}
         onClose={() => setAnchorEl(null)}
       >
-        <MenuItem>View as</MenuItem>
-        <MenuItem>Sort by</MenuItem>
         <MenuItem
           onClick={() => {
             setAnchorEl(null);
             setShowProgressDialog(true);
           }}
         >
-          Progress
+          プログレス
         </MenuItem>
       </Menu>
     </Toolbar>

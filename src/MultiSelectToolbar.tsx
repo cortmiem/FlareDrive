@@ -68,8 +68,7 @@ function MultiSelectToolbar({
           >
             {multiSelected.length === 1 && (
               <React.Fragment>
-                <MenuItem onClick={onRename}>Rename</MenuItem>
-                <MenuItem>Share</MenuItem>
+                <MenuItem onClick={onRename}>名前の変更</MenuItem>
               </React.Fragment>
             )}
           </Menu>

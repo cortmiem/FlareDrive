@@ -44,13 +44,13 @@ function ProgressDialog({
         onChange={(_, newTab) => setTab(newTab)}
         sx={{ "& .MuiTab-root": { flexBasis: "50%" } }}
       >
-        <Tab label="Downloads" />
-        <Tab label="Uploads" />
+        <Tab label="ダウンロード" />
+        <Tab label="アップロード" />
       </Tabs>
       {tasks.length === 0 ? (
         <DialogContent>
           <Typography textAlign="center" color="text.secondary">
-            No tasks
+            空っぽ
           </Typography>
         </DialogContent>
       ) : (
