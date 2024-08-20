@@ -22,7 +22,6 @@ function Header({
         value={search}
         onChange={(e) => onSearchChange(e.target.value)}
         sx={{
-          backgroundColor: "whitesmoke",
           borderRadius: "999px",
           padding: "8px 16px",
         }}
